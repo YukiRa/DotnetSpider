@@ -1,0 +1,13 @@
+public static void WenShu()
+{
+Site site = new site { EncodingName = "UTF-8" , RemoveOutboundLinks = true };
+
+using(var reader = new StreamReader(File.OpenRead("keyword.txt"))
+{
+string keyword;
+while ( !string.IsNullOrEmpty(keyword = reader.ReadLine()))
+{
+site.AddStarUrl("http://wenshu.court.gov.cn/list/list/?sorttype=1&conditions=searchWord+QWJS+++全文检索:{0}",keyword);
+}
+}
+//数据库部分不太会写了。也没时间了。
